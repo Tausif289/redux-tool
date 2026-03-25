@@ -9,19 +9,12 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     // ➕ Add Todo
-    addTodo: {
-      reducer(state, action) {
-        state.todos.push(action.payload);
-      },
-      prepare(text) {
-        return {
-          payload: {
-            id: nanoid(),
-            text,
-            completed: false
-          }
-        };
-      }
+    addTodo(state, action) {
+      state.todos.push({
+        id: nanoid(),
+        text: action.payload,
+        completed: false
+      });
     },
 
     // ❌ Delete Todo
@@ -48,11 +41,6 @@ const todoSlice = createSlice({
       if (todo) {
         todo.completed = !todo.completed;
       }
-    },
-
-    // 📄 Replace all (useful for loading data)
-    setTodos(state, action) {
-      state.todos = action.payload;
     }
   }
 });
@@ -61,8 +49,7 @@ export const {
   addTodo,
   deleteTodo,
   editTodo,
-  toggleTodo,
-  setTodos
+  toggleTodo
 } = todoSlice.actions;
 
 export default todoSlice.reducer;
