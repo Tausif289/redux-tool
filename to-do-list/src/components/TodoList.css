@@ -1,0 +1,26 @@
+.todo-list-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-text {
+  text-align: center;
+  color: gray;
+  font-size: 16px;
+  padding: 20px 0;
+}
